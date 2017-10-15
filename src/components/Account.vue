@@ -78,7 +78,7 @@ export default{
 *{
 	margin:0;
 	padding:0;
-
+    color:#555753;
 }
 .account_detail{
 	width:500px;

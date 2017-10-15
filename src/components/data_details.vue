@@ -1,13 +1,12 @@
 <template>
-	<div class="data_details">
-		<p>时间：<span>{{time}}</span></p>
-		<p>使用人:<span>{{user}}</span></p>
-		<p>类型:<span>{{kind}}</span></p>
-		<p>地点：<span>{{place}}</span></p>
-		<p>金额：<span>{{amount}}</span>元</p>
-		<p>用途:<span>{{use}}</span></p>
-		<p>备注：<span>{{details}}</span></p>
-		<p>未清账</p>
+	<div class="data_details search_datas">
+		<p><span>时间</span><span>{{time}}</span></p>
+		<p><span>使用人</span><span>{{user}}</span></p>
+		<p><span>类型</span><span>{{kind}}</span></p>
+		<p><span>地点</span><span>{{place}}</span></p>
+		<p><span>金额</span><span>{{amount}}元</span></p>
+		<p><span>用途</span><span>{{use}}</span></p>
+		<p><span>备注</span><span>{{details}}</span></p>
 	</div>	
 </template>
 <script type="text/javascript">
@@ -25,6 +24,6 @@ export default{
 }
 	
 </script>
-<style type="text/css">
+<style>
 	
 </style>

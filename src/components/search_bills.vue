@@ -112,7 +112,6 @@ export default{
 	},
 	methods:{
 		submit(){
-			this.bills_display=false;
 			if(this.select==""||this.select1==""||this.select2==""||this.user==""){
 				this.searchinforms=true;
 				this.informs="请将以上信息填写完整";

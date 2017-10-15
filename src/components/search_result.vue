@@ -20,7 +20,7 @@ export default{
 }
 	
 </script>
-<style scoped>
+<style>
 .search_datas{
 	margin:30px auto;
 	width:450px;
@@ -31,8 +31,7 @@ export default{
 }
 .search_datas p{
 	border-bottom: 1px solid #E0E0E0;
-	padding-bottom:15px;
-	height:20px;
+	height:30px;
 }
 .search_datas p:after{
 	content:"";
@@ -50,7 +49,7 @@ export default{
 	color:#4E9A06;
 	margin-right: 20px;
 }	
-button{
+.search_datas button{
 	text-align: center;
 	margin-left:110px;
 	width:200px;
@@ -58,5 +57,6 @@ button{
 	color:white;
 	background-color:#4E9A06;
 	border-radius:8px;
+	margin-top:15px;
 }
 </style>

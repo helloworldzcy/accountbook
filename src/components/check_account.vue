@@ -1,14 +1,20 @@
 <template>
+	<div class="check_account_wrap">
+    <nav_bar></nav_bar>		
 	<div class="check_account">
-	<input type="text" placeholder="搜索框" v-model="input">
+	<input type="text" placeholder="搜索框" v-model="input" class="check_search">
+	<p style="color:#4E9A06;font-size:25px;height:20px">未清账单</p>
+	<p style="color:#4E9A06;font-size:15px">Unsettled bill</p>
 	<data_details v-for="message in messageArr" :time="message.time" :user="message.user" :kind="message.kind" :place="message.place" :amount="message.amount" :use="message.use" :details="message.details"></data_details>
+	</div>
 	</div>
 </template>
 <script type="text/javascript">
 import data_details from '../components/data_details.vue'
+import nav_bar from '../components/nav_bar.vue'
 export default{
 	name:'check_account',
-	components:{data_details},
+	components:{data_details,nav_bar},
 	data(){
 		return{
 			messageArr:[
@@ -22,5 +28,40 @@ export default{
 }
 	
 </script>
-<style type="text/css">
+<style>
+.check_account{
+	margin:50px auto;
+}
+.check_search{
+	width:400px;
+	height:30px;
+}
+.search_datas{
+	margin:30px auto;
+	width:450px;
+	text-align: left;
+	border-top:1px solid #C0C0C0;
+	box-sizing: border-box;
+	padding:20px 10px;
+}
+.search_datas p{
+	border-bottom: 1px solid #E0E0E0;
+	height:30px;
+}
+.search_datas p:after{
+	content:"";
+	display: table;
+	clear: both;
+	overflow:hidden;
+}
+.search_datas p span:nth-child(1){
+	float:left;
+	margin-left:20px;
+
+}	
+.search_datas p span:nth-child(2){
+	float:right;
+	color:#4E9A06;
+	margin-right: 20px;
+}	
 </style>

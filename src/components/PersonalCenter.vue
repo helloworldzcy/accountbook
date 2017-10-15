@@ -1,19 +1,24 @@
 <template>
+<div class="personalcenter_wrap">
+  <nav_bar></nav_bar>
+    <p style="font-size:25px;color:#4E9A06;height:20px;margin-top:50px">修改密码</p>
+    <p style="font-size:15px;color:#4E9A06;margin-bottom:30px">Change Password</p>
 	<div class="personalcenter">
-    <p>修改密码</p>
-    <p><label>原密码</label><input type="password" v-model="old_password" v-on:click="conceal"></p>
-    <p v-show="change_inform1">{{inform1}}</p>
-    <p><label>新密码</label><input type="password" v-model="new_password" placeholder="密码为6-20位字符" v-on:click="conceal"></p>
-    <p v-show="change_inform2">{{inform2}}</p>
-    <p><label>确认密码</label><input type="password" v-model="new_password1" v-on:click="conceal"></p>
-    <p v-show="change_inform3">{{inform3}}</p>
+    <p><span>原密码</span><span><input type="password" v-model="old_password" v-on:click="conceal"></span></p>
+    <p v-show="change_inform1" class="inform_change">{{inform1}}</p>
+    <p><span>新密码</span><span><input type="password" v-model="new_password" placeholder="密码为6-20位字符" v-on:click="conceal"></span></p>
+    <p v-show="change_inform2" class="inform_change">{{inform2}}</p>
+    <p><span>确认密码</span><span><input type="password" v-model="new_password1" v-on:click="conceal"></span></p>
+    <p v-show="change_inform3" class="inform_change">{{inform3}}</p>
     <button v-on:click="submit">确认修改</button> 
  </div>
-
+</div>
 </template>
 <script type="text/javascript">
+import nav_bar from '../components/nav_bar.vue'
 export default{
   name:'PersonalCenter',
+  components:{nav_bar},
   data(){
     return{
       old_password:'',
@@ -70,6 +75,56 @@ export default{
 }
 	
 </script>
-<style type="text/css">
-	
+<style scoped>
+*{
+  color:#555753;
+}
+input{
+  font-size: 15px;
+  width:230px;
+  height:35px;
+  border:1px solid #C0C0C0;
+  margin-left:20px;
+  display: inline;
+}
+button{
+  margin-top: 20px;
+  margin-bottom: 80px;
+  width:320px;
+  height:45px;
+  background-color: #4E9A06;
+  color:white;
+  font-size: 17px;
+}
+.personalcenter{
+  width:360px;
+  margin:0 auto;
+}
+.personalcenter p{
+  height:25px;
+  margin-top:30px;
+}	
+.personalcenter p:after{
+  content:"";
+  display: table;
+  clear: both;
+  overflow:hidden;
+}
+.personalcenter p span:nth-child(1){
+  margin-top:10px;
+  float:left;
+  margin-left:20px;
+
+} 
+.personalcenter p span:nth-child(2){
+  float:right;
+  color:#4E9A06;
+  margin-right: 20px;
+} 
+.inform_change{
+  height:20px;
+  box-sizing: border-box;
+  color:red;
+  margin:0 auto;
+}
 </style>

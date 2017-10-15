@@ -37,14 +37,14 @@ img{
   margin-bottom: 10px;
 }
 .system_name{
-  width:100%;
+  width:80%;
   height:50px;
   border-bottom:1px solid #DDC;
   padding-top: 5px;
   box-sizing: border-box;
-  font-size:30px;
+  font-size:25px;
   color:#4E9A06;
-  margin-bottom:40px;
+  margin:30px auto;
 
 }
 

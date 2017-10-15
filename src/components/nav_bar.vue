@@ -6,7 +6,8 @@
 				<span v-on:click="show" style="color:green">个人中心</span>
 				<div class="nav_bar_choice" v-show="unshow">
 					<router-link to="/Account"><p>记录账单</p></router-link>		
-					<router-link to="/Search_bills"><p>查询账单</p></router-link>			
+					<router-link to="/Search_bills"><p>查询账单</p></router-link>	
+					<router-link to="/check_account"><p>审查账单</p></router-link>				
 					<router-link to="/PersonalCenter"><p>修改密码</p></router-link>
 					<router-link to="/"><p>退出登录</p></router-link>
 				</div>
@@ -67,7 +68,7 @@ ul{
 }
 .nav_bar_choice{
 	margin:5px;
-	height:160px;
+	height:200px;
 	width:80px;
 	border:1px solid #C0C0C0;
 	background-color: white;
