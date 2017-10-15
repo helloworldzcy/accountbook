@@ -1,123 +1,51 @@
 <template>
 <div class="interface">
-  <div class="wrap">
-  <p>{{name}}</p>
-  <div class="choice">
-    <router-link to="/login"><span>{{si}}</span></router-link>
-   <router-link to="/register"><span>{{su}}</span></router-link>
-  </div>
-    <div class="decoration decoration1"></div>
-  <div class="decoration decoration2"></div>
-  <div class="decoration decoration3"></div>
-  <div class="decoration decoration4"></div>
-  </div>
+<div class="system_name">
+<p>Financial Accounting system</p>
+</div>
+<img :src="logo">
+<login_register></login_register>
 </div>  
 </template>
 
 <script>
+import login_register from '../components/login_register.vue'
+import logo from '@/assets/1.jpg'
 export default {
   name: 'hello',
+  components:{login_register},
   data () {
     return {
-      name:'Financial Accounting System',
-      si: 'Sign In',
-      su:'Sign up'      
+      logo:logo
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.interface{
-    overflow-x: hidden;
-  position: absolute;
-  top:0;
-  left: 0;
-  right:0;
-  bottom:0;
-  background-color: black;
+<style >
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman';
 }
-@media (max-width:500px){
-.wrap{
-  width:90%;
+img{
+  width:80px;
+  height:80px;
+  border-radius: 50%;
+  border:1px solid #C0C0C0;
+  margin-bottom: 10px;
 }
-}
-@media (min-width:500px){
-.wrap{
-  width:400px;
-}
-}
-.wrap{
-
-  position:absolute;
-  height:300px;
-  border:1px solid #E0E0E0;
-  left:50%;
-  top:200px;
-  transform:translateX(-50%);
-}
-.decoration{
-  position:absolute;
-  width:300px;
-  height:200px;
-}
-.decoration1{
-  left:-100px;
-  transform:translateX(-50%);
-  top:-100px;
-  border-left:1px solid #ffffff;
-  border-right:1px solid #ffffff;
-  border-top:1px solid #ffffff;
-}
-.decoration2{
- right:-200px;
-  top:-150px;
-  border-left:1px solid #ffffff;
-  border-right:1px solid #ffffff;
-  border-bottom:1px solid #ffffff;
-}
-.decoration3{
-  width:250px;
-  left:-200px;
-  bottom:-150px;
-  border-right:1px solid #ffffff;
-  border-left:1px solid #ffffff;
-  border-top:1px solid #ffffff;
-}
-.decoration4{
-  width:150px;
-  height:150px;
-  border:1px solid #ffffff;
-  right:-120px;
-  bottom:-230px;
-
-  transform:translateY(-50%);
-}
-p{
+.system_name{
   width:100%;
-  color:#FFFFFF;
-  margin-top: 100px;
-  font-size:20px;
-}
-.choice{
-   width:100%;
-   height: 300px;
-   background-color:black;
-}
-.choice span{
-  display: inline-block;
-  width:120px;
   height:50px;
+  border-bottom:1px solid #DDC;
+  padding-top: 5px;
   box-sizing: border-box;
-  padding:15px;
-  border:1px solid #ffffff;
-  text-align: center;
-  color: white;
-  margin-top:30px;
+  font-size:30px;
+  color:#4E9A06;
+  margin-bottom:40px;
+
 }
-.choice span:hover{
-  background-color:white;
-  color:black;
-}
+
 </style>

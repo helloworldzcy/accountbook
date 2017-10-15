@@ -1,113 +1,75 @@
 <template>
 	<div class="personalcenter">
-		<span>Financial Accounting System</span>
-		<div class="wrap">
-			<p>Change Password</p>
-			<form onSubmit="return check();">
-				<p><input type="post" name="password" class="password1" placeholder="Enter the original password" v-model="input_old"></p>
-				<p><input type="post" name="password" placeholder="Enter the new password" v-model="input_new"></p>
-				<button type="submit">Submit</button>
+    <p>修改密码</p>
+    <p><label>原密码</label><input type="password" v-model="old_password" v-on:click="conceal"></p>
+    <p v-show="change_inform1">{{inform1}}</p>
+    <p><label>新密码</label><input type="password" v-model="new_password" placeholder="密码为6-20位字符" v-on:click="conceal"></p>
+    <p v-show="change_inform2">{{inform2}}</p>
+    <p><label>确认密码</label><input type="password" v-model="new_password1" v-on:click="conceal"></p>
+    <p v-show="change_inform3">{{inform3}}</p>
+    <button v-on:click="submit">确认修改</button> 
+ </div>
 
-			</form>
-		</div>
-		<div class="decoration decoration1"></div>
-		<div class="decoration decoration2"></div>
-		<div class="decoration decoration3"></div>
-		<div class="decoration decoration4"></div>
-    </div>
-</div>
 </template>
 <script type="text/javascript">
 export default{
   name:'PersonalCenter',
   data(){
     return{
-
+      old_password:'',
+      new_password:'',
+      new_password1:'',
+      change_inform1:false,
+      change_inform2:false,
+      change_inform3:false
+    }
+  },
+  methods:{
+    submit(){
+      this.change_inform1=true;
+      this.change_inform2=true;
+      this.change_inform3=true;
+      this.inform1="";
+      this.inform2="";
+      this.inform3="";  
+      if(this.old_password.length<6||this.old_password.length>20||this.old_password==""||this.new_password==""||this.new_password1==""||this.new_password!=this.new_password1||this.new_password.length<6||this.new_password.length>20)
+      {
+        if(this.old_password.length<6||this.old_password.length>20)
+        {
+          this.inform1="原密码错误！"
+        }
+        if(this.old_password==""){
+          this.inform1="请输入原密码！"
+        }
+        if(this.new_password=="")
+        {
+          this.inform2="新密码不能为空"
+        }
+        if(this.new_password.length<6&&this.new_password.length>0||this.new_password.length>20){
+          this.inform2="密码为6-20位字符"
+        }
+        if(this.new_password1==""&&this.new_password.length>=6){
+          this.inform3="请再次确认密码！"
+        }
+        if(this.new_password!=this.new_password1&&this.new_password1!="")
+        {
+          this.inform3="两次密码不一致，请重新输入！"
+        }
+      }
+      else
+      {
+        this.$router.push('/change_success');
+      }
+    },
+    conceal(){
+      this.change_inform1=false;
+      this.change_inform2=false;
+      this.change_inform3=false;      
     }
   }
 }
 	
 </script>
 <style type="text/css">
-.personalcenter{
-  position: absolute;
-  left:0;
-  top:0;
-  right: 0;
-  bottom: 0;
-  background: black;
-  color:white;
-  min-width: 400px;
-}
-.wrap{
-  position: absolute;
-  width:50%;
-  height:340px;
-  left:50%;
-  top:50%;
-  transform: translate(-50%,-50%);
-  border:1px solid #FFFFFF;
-  min-width:400px;
-  text-align:center;
-  box-sizing: border-box;
-  padding:30px;
-
-}
-.personalcenter span{
-	width:100%;
-	display: block;
-	position:absolute;
-   left:50%;
-   top:15%;
-   transform: translate(-50%,-50%);
-	font-size:25px;
-}
-input,button{
-	 width:250px;
-	 height:35px;
-	 font-size: 16px;
-	 margin:5px;
-}
-.decoration{
-	position:absolute;
-}
-.decoration1{
-  width:50px;
-  height:50px;
-  border:1px solid #ffffff;
-  left:50px;
-  top:50px;
-}
-.decoration2{
-  width:60px;
-  height:60px;
-  border:1px solid #ffffff;
-  right:50px;
-  bottom:50px;
-}
-.decoration3{
-  width:70px;
-  height:70px;
-  border:1px solid #ffffff;
-  left:150px;
-  bottom:100px;
-}
-.decoration4{
-  width:50px;
-  height:50px;
-  border:1px solid #ffffff;
-  right:150px;
-  bottom:30px;
-}
-.decoration1:hover,.decoration2:hover,.decoration3:hover,.decoration4:hover{
-  background-color: white;
-  border:1px solid black;
-}
-
-@media(max-width:0px){
-.decoration1,.decoration2,.decoration3,.decoration4{
-    display:none;
-  }
-}			
 	
 </style>
