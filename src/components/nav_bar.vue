@@ -3,7 +3,7 @@
 		<ul :class="{'active':isactive}">
 			<li style="color:green;font-size:25px">Financial accounting system</li>
 			<li>
-				<span v-on:click="show" style="color:green">个人中心</span>
+				<span v-on:click="show" style="color:green">个人中心&nbsp;\/</span>
 				<div class="nav_bar_choice" v-show="unshow">
 					<router-link to="/Account"><p>记录账单</p></router-link>		
 					<router-link to="/Search_bills"><p>查询账单</p></router-link>	

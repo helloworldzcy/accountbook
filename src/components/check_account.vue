@@ -3,6 +3,7 @@
     <nav_bar></nav_bar>		
 	<div class="check_account">
 	<input type="text" placeholder="搜索框" v-model="input" class="check_search">
+	<button>搜索</button>
 	<p style="color:#4E9A06;font-size:25px;height:20px">未清账单</p>
 	<p style="color:#4E9A06;font-size:15px">Unsettled bill</p>
 	<data_details v-for="message in messageArr" :time="message.time" :user="message.user" :kind="message.kind" :place="message.place" :amount="message.amount" :use="message.use" :details="message.details"></data_details>
@@ -36,6 +37,15 @@ export default{
 	width:400px;
 	height:30px;
 }
+.check_account button{
+	width:50px;
+	height:36px;
+	margin-left:-55px;
+	margin-top:3px;
+	border:0;
+	background-color: #4E9A06;
+	color:white;
+}
 .search_datas{
 	margin:30px auto;
 	width:450px;
@@ -63,5 +73,5 @@ export default{
 	float:right;
 	color:#4E9A06;
 	margin-right: 20px;
-}	
+}	/*对组件的样式设置*/
 </style>

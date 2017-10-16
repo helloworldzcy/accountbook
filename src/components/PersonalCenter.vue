@@ -1,7 +1,7 @@
 <template>
 <div class="personalcenter_wrap">
   <nav_bar></nav_bar>
-    <p style="font-size:25px;color:#4E9A06;height:20px;margin-top:50px">修改密码</p>
+    <p style="font-size:25px;color:#4E9A06;height:30px;margin-top:50px">修改密码</p>
     <p style="font-size:15px;color:#4E9A06;margin-bottom:30px">Change Password</p>
 	<div class="personalcenter">
     <p><span>原密码</span><span><input type="password" v-model="old_password" v-on:click="conceal"></span></p>
@@ -79,7 +79,7 @@ export default{
 *{
   color:#555753;
 }
-input{
+.personalcenter input{
   font-size: 15px;
   width:230px;
   height:35px;
@@ -87,7 +87,7 @@ input{
   margin-left:20px;
   display: inline;
 }
-button{
+.personalcenter button{
   margin-top: 20px;
   margin-bottom: 80px;
   width:320px;

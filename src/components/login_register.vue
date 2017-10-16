@@ -181,7 +181,5 @@ export default{
 	padding:15px 0px;
 	cursor: pointer;
 }
-.active:hover{
-  background-color: white;
-}
+
 </style>
