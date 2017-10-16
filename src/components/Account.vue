@@ -1,7 +1,7 @@
 <template>														
 	<div class="account">
 		<nav_bar></nav_bar>
-		<p style="font-size:30px;color:#4E9A06">记录账单</p>
+		<p style="font-size:25px;color:#4E9A06">记录账单</p>
 		<p style="font-size:15px;color:#4E9A06;margin:5px auto">Record the bill</p>
 		<div class="account_detail">
 			<form>

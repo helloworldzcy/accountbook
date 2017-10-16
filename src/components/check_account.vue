@@ -4,8 +4,8 @@
 	<div class="check_account">
 	<input type="text" placeholder="搜索框" v-model="input" class="check_search">
 	<button>搜索</button>
-	<p style="color:#4E9A06;font-size:25px;height:20px">未清账单</p>
-	<p style="color:#4E9A06;font-size:15px">Unsettled bill</p>
+	<p class="unsettled1">未清账单</p>
+	<p class="unsettled2">Unsettled bill</p>
 	<data_details v-for="message in messageArr" :time="message.time" :user="message.user" :kind="message.kind" :place="message.place" :amount="message.amount" :use="message.use" :details="message.details"></data_details>
 	</div>
 	</div>
@@ -74,4 +74,14 @@ export default{
 	color:#4E9A06;
 	margin-right: 20px;
 }	/*对组件的样式设置*/
+.unsettled1{
+	font-size: 25px;
+	color:#4E9A06;
+	height:25px;
+	margin-top:40px;
+}
+.unsettled2{
+	font-size:14px;
+	color:#4E9A06;
+}
 </style>

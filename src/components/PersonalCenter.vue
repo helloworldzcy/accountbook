@@ -1,8 +1,8 @@
 <template>
 <div class="personalcenter_wrap">
   <nav_bar></nav_bar>
-    <p style="font-size:25px;color:#4E9A06;height:30px;margin-top:50px">修改密码</p>
-    <p style="font-size:15px;color:#4E9A06;margin-bottom:30px">Change Password</p>
+    <p class="change_password1">修改密码</p>
+    <p class="change_password2">Change Password</p>
 	<div class="personalcenter">
     <p><span>原密码</span><span><input type="password" v-model="old_password" v-on:click="conceal"></span></p>
     <p v-show="change_inform1" class="inform_change">{{inform1}}</p>
@@ -127,4 +127,13 @@ export default{
   color:red;
   margin:0 auto;
 }
+.change_password1{
+  font-size: 25px;
+  color:#4E9A06;
+  margin-top:40px;
+}
+.change_password2{
+  font-size:14px;
+  color:#4E9A06;
+  }
 </style>

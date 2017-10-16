@@ -163,15 +163,13 @@ button{
 .search_bills_details p:nth-child(1){
 	color:#4E9A06;
 	font-size: 25px;
-	height:20px;
 	margin-top:15px;
 }
 .search_bills_details p:nth-child(2){
 	color:#4E9A06;
 	font-size: 15px;
-	height:50px;
 	box-sizing: border-box;
-	padding-bottom: 30px;
+	padding-bottom: 40px;
 	border-bottom:1px solid #E0E0E0;
 	width:450px;
 	margin:10px auto;
